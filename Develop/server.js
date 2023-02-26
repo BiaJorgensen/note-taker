@@ -1,9 +1,11 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const api = require('../Develop/routes/notes')
 
 
 app.use(express.static('public'));
+app.use(api)
 
 
 
