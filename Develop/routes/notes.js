@@ -30,7 +30,13 @@ router.post('/api/notes', (req, res) => {
 
 } );
 
-router.delete('/api/notes/:id', (req, res) => console.log(`${req.params.id} has been deleted`))
+router.delete('/api/notes/:id', (req, res) => {
+    console.log(`${req.params.id} has been deleted`);
+    const readNotes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
+    const notDeletedNotes = readNotes.filter(note => note.id !== req.params.id)
+    console.log(notDeletedNotes);
+    
+})
 
 module.exports = router
 
