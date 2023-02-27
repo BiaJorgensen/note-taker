@@ -8,7 +8,7 @@ const fs = require('fs')
 router.get('/api/notes', (req, res) => res.json(notes));
 
 router.post('/api/notes', (req, res) => {
-    const { title, text} = req.body;
+    const { title, text } = req.body;
 
     const newNote = {
         title,
@@ -18,7 +18,7 @@ router.post('/api/notes', (req, res) => {
 
     const noteString = JSON.stringify(newNote)
 
-    fs.appendFile(notes, noteString, (err) => 
+    fs.appendFile("./db/db.json", noteString, (err) => 
     err ? console.error(err) : console.log('Done'))
 
 } )
