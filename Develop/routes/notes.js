@@ -16,10 +16,11 @@ router.post('/api/notes', (req, res) => {
         // id: uuidv4(),
     }
 
-    const noteString = JSON.stringify(newNote)
+    const readNotes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
+    readNotes.push(newNote)
+    const noteString = JSON.stringify(readNotes)
 
-    fs.appendFile("./db/db.json", noteString, (err) => 
-    err ? console.error(err) : console.log('Done'))
+    fs.writeFileSync('./db/db.json', noteString)
 
 } )
 
