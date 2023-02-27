@@ -12,12 +12,13 @@ router.get('/api/notes', (req, res) => {
 
 
 router.post('/api/notes', (req, res) => {
-    const { title, text } = req.body;
+    const { title, text, id } = req.body;
+    const generateId = uuidv4()
 
     const newNote = {
         title,
         text,
-        // id: uuidv4(),
+        id: generateId
     }
 
     const readNotes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
