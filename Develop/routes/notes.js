@@ -28,7 +28,9 @@ router.post('/api/notes', (req, res) => {
     fs.writeFileSync('./db/db.json', noteString);
     res.json(newNote)
 
-} )
+} );
+
+router.delete('/api/notes/:id', (req, res) => console.log(`${req.params.id} has been deleted`))
 
 module.exports = router
 
