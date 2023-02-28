@@ -3,8 +3,7 @@ const express = require('express');
 // Importing Node.js path module
 const path = require('path');
 const app = express();
-// Importing notes.js
-// const api = require('../Develop/routes/notes');
+// Importing index.js
 const api = require('./routes/index')
 
 // Middleware for parsing JSON and urlencoded form data
@@ -14,8 +13,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 app.use(api)
-
-
 
 // GET Route for notes page
 app.get('/notes', (req, res) =>

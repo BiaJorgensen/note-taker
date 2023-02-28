@@ -46,9 +46,7 @@ notes.delete('/:id', (req, res) => {
     // Saving remaining notes in db.json
     fs.writeFileSync('./db/db.json', noteString);
     // Returning ID of the deleted note
-    res.json(`${req.params.id} has been deleted`)
-    
-    
+    res.json(`${req.params.id} has been deleted`)  
 })
 
 // Exporting notes
