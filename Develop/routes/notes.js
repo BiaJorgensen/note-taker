@@ -1,12 +1,12 @@
 // Importing Router method from Express.js
-const router = require('express').Router();
+const notes = require('express').Router();
 // Importing uuid library that generates unique identifiers
 const { v4: uuidv4 } = require('uuid');
 // Importing File System
 const fs = require('fs')
 
 // GET Route for endpoint /api/notes
-router.get('/api/notes', (req, res) => {
+notes.get('/', (req, res) => {
     // Reading db.json file
     const readNotes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
     // Returning saved notes as JSON
@@ -14,7 +14,7 @@ router.get('/api/notes', (req, res) => {
 });
 
 // POST Route for endpoint /api/notes
-router.post('/api/notes', (req, res) => {
+notes.post('/', (req, res) => {
     const { title, text, id } = req.body;
     // Generating unique indentifier
     const generateId = uuidv4()
@@ -37,7 +37,7 @@ router.post('/api/notes', (req, res) => {
 } );
 
 // DELETE Route for endpoint /api/notes
-router.delete('/api/notes/:id', (req, res) => {
+notes.delete('/:id', (req, res) => {
     // Reading db.json file
     const readNotes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
     // Filtering notes to only show the ones that are not being deleted (don't have the ID of the deleted note)
@@ -51,7 +51,6 @@ router.delete('/api/notes/:id', (req, res) => {
     
 })
 
-// Exporting router
-
-module.exports = router
+// Exporting notes
+module.exports = notes
 

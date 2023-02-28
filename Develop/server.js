@@ -4,7 +4,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 // Importing notes.js
-const api = require('../Develop/routes/notes');
+// const api = require('../Develop/routes/notes');
+const api = require('./routes/index')
 
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
