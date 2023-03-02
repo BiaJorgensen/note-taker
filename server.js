@@ -4,7 +4,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 // Importing index.js
-const api = require('./routes/index')
+const api = require('./routes/index');
+const PORT = process.env.PORT || 3000
 
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
@@ -25,5 +26,5 @@ app.get('/*', (req, res) =>
 );
 
 // Server listening on port 3000
-app.listen(3000)
+app.listen(PORT)
 
