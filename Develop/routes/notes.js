@@ -31,7 +31,7 @@ notes.post('/', (req, res) => {
     const noteString = JSON.stringify(readNotes);
     // Saving all notes in db.json
     fs.writeFileSync('./db/db.json', noteString);
-    // Returning saved notes as JSON
+    // Returning new note as JSON
     res.json(newNote)
 
 } );
