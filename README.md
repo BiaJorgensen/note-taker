@@ -33,12 +33,12 @@ To learn more about this license, please access https://opensource.org/licenses/
 
 ## Link to deployed application
 
-
+https://bia-jorgensen-note-taker.herokuapp.com/
 
 ## Website preview
 
-<kbd>![Note-Taker-Mainpage](./Develop/public/assets/images/main-page.PNG)</kbd>
-<kbd>![Note-Taker-Notes-page](./Develop/public/assets/images/notes-page.PNG)</kbd>
+<kbd>![Note-Taker-Mainpage](./public/assets/images/main-page.PNG)</kbd>
+<kbd>![Note-Taker-Notes-page](./public/assets/images/notes-page.PNG)</kbd>
 
 ## Questions
   Visit my GitHub profile page: https://github.com/BiaJorgensen<br>
